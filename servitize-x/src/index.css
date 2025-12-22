@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+
+@layer base {
+  body {
+    font-family: "Domine", serif;
+    font-weight: 500;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 600;
+  }
+
+  input, button, label {
+    font-family: "Domine", serif;
+    font-weight: 500;
+  }
+}
