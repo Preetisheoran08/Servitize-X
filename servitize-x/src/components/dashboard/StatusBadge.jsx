@@ -1,25 +1,35 @@
 export default function StatusBadge({ status }) {
-  const statusConfig = {
+  const STATUS_MAP = {
     ACTIVE: {
-      text: "Active",
-      color: "bg-green-500",
+      label: "Active",
+      color: "bg-green-100 text-green-700",
     },
     INACTIVE: {
-      text: "Inactive",
-      color: "bg-red-500",
+      label: "Inactive",
+      color: "bg-gray-100 text-gray-600",
     },
-    PIPELINE: {
-      text: "Pipeline",
-      color: "bg-yellow-400",
+    PENDING: {
+      label: "Pending",
+      color: "bg-yellow-100 text-yellow-700",
+    },
+    SUSPENDED: {
+      label: "Suspended",
+      color: "bg-red-100 text-red-700",
     },
   };
 
-  const config = statusConfig[status];
+  // 🔒 Normalize & fallback
+  const safeStatus = status?.toUpperCase();
+  const config = STATUS_MAP[safeStatus] || {
+    label: "Unknown",
+    color: "bg-gray-100 text-gray-500",
+  };
 
   return (
-    <div className="flex items-center gap-2 text-sm">
-      <span className={`w-2.5 h-2.5 rounded-full ${config.color}`} />
-      <span className="text-gray-700">{config.text}</span>
-    </div>
+    <span
+      className={`px-3 py-1 rounded-full text-xs font-medium ${config.color}`}
+    >
+      {config.label}
+    </span>
   );
 }
