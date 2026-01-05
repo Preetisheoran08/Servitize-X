@@ -13,8 +13,9 @@ import Conditions from "./pages/user/Conditions";
 import Alerts from "./pages/user/Alerts";
 import Maintenance from "./pages/user/Maintenance";
 import Analytics from "./components/userDashboard/analytics/Analytics";
-import About from "./pages/user/about";
+import About from "./pages/user/About";
 import Contact from "./pages/user/Contact";
+
 
 export default function App() {
   return (
