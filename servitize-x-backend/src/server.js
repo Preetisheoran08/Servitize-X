@@ -18,7 +18,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",           // local frontend
-      "https://YOUR-FRONTEND.onrender.com" // render frontend (later)
+      "https://servitize-x.onrender.com" // render frontend (later)
     ],
     credentials: true,
   })
